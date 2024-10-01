@@ -1,0 +1,32 @@
+name: windows
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+
+      - name: Build Windows
+        run: flutter build windows
+
+      - name: Archive Release files
+        run: |
+          Compress-Archive -Path ./build/windows/x64/runner/Release/* -DestinationPath ./flexify-windows.zip
+
+      - name: Upload zip
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./flexify-windows.zip
+          asset_name: Windows zip
+          tag: ${{ github.ref }}
+          overwrite: false

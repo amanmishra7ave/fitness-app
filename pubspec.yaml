@@ -1,0 +1,76 @@
+name: flexify
+description: Track gym progress, visualize graphs, enjoy offline support & timers
+publish_to: none
+version: 1.1.87+196
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  drift: ^2.15.0
+  sqlite3_flutter_libs: ^0.5.20
+  path_provider: ^2.1.2
+  path: ^1.8.3
+  csv: ^6.0.0
+  intl: ^0.19.0
+  fl_chart: ^0.68.0
+  permission_handler: ^11.3.0
+  provider: ^6.1.1
+  dynamic_color: ^1.7.0
+  sqlite3: ^2.4.0
+  file_picker: ^8.0.3
+  share_plus: ^9.0.0
+  audioplayers: ^6.0.0
+  package_info_plus: ^8.0.0
+  url_launcher: ^6.2.6
+  badges: ^3.1.2
+  flutter_local_notifications: ^17.2.1+2
+  msvcredist:
+    git:
+      url: https://github.com/insertjokehere/flutter_msvcredist.git
+      ref: main
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  drift_dev: ^2.15.0
+  build_runner: ^2.4.8
+  flutter_launcher_icons: ^0.13.1
+  msix:
+    git:
+      url: https://github.com/insertjokehere/msix.git
+      ref: msvc_redist
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+flutter_launcher_icons:
+  android: false
+  ios: true
+  image_path: assets/ic_launcher.png
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: assets/ic_launcher.png
+    background_color: '#hexcode'
+    theme_color: '#hexcode'
+  windows:
+    generate: true
+    image_path: assets/ic_launcher.png
+    icon_size: 48
+  macos:
+    generate: true
+    image_path: assets/ic_launcher.png
+msix_config:
+  msstore_appId: 9P13THVK7F69
+  display_name: Flexify
+  publisher_display_name: Frisbee Software
+  identity_name: FrisbeeSoftware.Flexify
+  msix_version: 1.0.41.0
+  logo_path: assets/ic_launcher.png
+  trim_logo: false
+  publisher: CN=BB0811CB-EED5-441C-BE1B-D31F391F76DE
+  store: true
